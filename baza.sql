@@ -72,3 +72,67 @@ CREATE TABLE pogrzeb (
     FOREIGN KEY (id_samochodu) REFERENCES samochody(id_samochodu),
     FOREIGN KEY (id_nagrobka) REFERENCES nagrobki(id_nagrobka)
 );
+
+-- Dodawanie rekordów do tabeli klienci
+INSERT INTO klienci (imie, nazwisko) VALUES
+('Jan', 'Kowalski'),
+('Anna', 'Nowak'),
+('Piotr', 'Wiśniewski'),
+('Katarzyna', 'Kamińska'),
+('Tomasz', 'Wójcik');
+
+-- Dodawanie rekordów do tabeli pracownicy
+INSERT INTO pracownicy (imie, nazwisko, pensja, stanowisko) VALUES
+('Andrzej', 'Kowalczyk', 4500.00, 'Grabiarz'),
+('Magdalena', 'Zielińska', 4800.00, 'Kierownik'),
+('Michał', 'Szymański', 4000.00, 'Kierowca'),
+('Monika', 'Lewandowska', 4600.00, 'Sekretarka'),
+('Rafał', 'Mazur', 4200.00, 'Kamieniarz');
+
+-- Dodawanie rekordów do tabeli samochody
+INSERT INTO samochody (marka, rok_produkcji, typ) VALUES
+('Ford', 2019, 'Karawan'),
+('Mercedes', 2020, 'Karawan'),
+('Volvo', 2018, 'Karawan'),
+('Audi', 2017, 'Karawan'),
+('BMW', 2021, 'Karawan');
+
+-- Dodawanie rekordów do tabeli typ
+INSERT INTO typ (typ) VALUES
+('Granit'),
+('Marmur'),
+('Piaskowiec'),
+('Beton'),
+('Wapień');
+
+-- Dodawanie rekordów do tabeli nagrobki
+INSERT INTO nagrobki (id_typ, rozmiar, material, klasa) VALUES
+(1, 120, 'Granit', 'Klasa A'),
+(2, 130, 'Marmur', 'Klasa B'),
+(3, 140, 'Piaskowiec', 'Klasa C'),
+(4, 150, 'Beton', 'Klasa D'),
+(5, 160, 'Wapień', 'Klasa E');
+
+-- Dodawanie rekordów do tabeli dane_zm
+INSERT INTO dane_zm (imie_zm, nazwisko_zm, data_ur_zm, data_sm_zm) VALUES
+('Maria', 'Zawadzka', '1945-05-12', '2022-10-20'),
+('Krzysztof', 'Lewicki', '1950-07-15', '2023-02-14'),
+('Barbara', 'Zając', '1930-03-18', '2021-12-25'),
+('Andrzej', 'Woźniak', '1965-06-28', '2023-01-01'),
+('Agnieszka', 'Polak', '1970-04-21', '2022-07-30');
+
+-- Dodawanie rekordów do tabeli trumny
+INSERT INTO trumny (rozmiar, cena, klasa, material_wykonania) VALUES
+(180, 2000.00, 'Klasa A', 'Drewno'),
+(190, 2500.00, 'Klasa B', 'Metal'),
+(200, 3000.00, 'Klasa C', 'Drewno'),
+(210, 3500.00, 'Klasa D', 'Metal'),
+(220, 4000.00, 'Klasa E', 'Drewno');
+
+-- Dodawanie rekordów do tabeli pogrzeb
+INSERT INTO pogrzeb (miejscowosc, data_pogrzebu, id_klienta, id_zmarlego, id_trumny, id_pracownika, id_samochodu, id_nagrobka) VALUES
+('Warszawa', '2023-05-10 10:00:00', 1, 1, 1, 1, 1, 1),
+('Kraków', '2023-06-15 12:00:00', 2, 2, 2, 2, 2, 2),
+('Poznań', '2023-07-20 14:00:00', 3, 3, 3, 3, 3, 3),
+('Gdańsk', '2023-08-25 16:00:00', 4, 4, 4, 4, 4, 4),
+('Wrocław', '2023-09-30 18:00:00', 5, 5, 5, 5, 5, 5);
